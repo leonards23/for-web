@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.15.3](https://github.com/stoatchat/for-web/compare/stoat-for-web-v0.15.2...stoat-for-web-v0.15.3) (2026-08-19)
+
+
+### Bug Fixes
+
+* External link and invite paths on self-hosted ([#1521](https://github.com/stoatchat/for-web/issues/1521)) ([039ba1c](https://github.com/stoatchat/for-web/commit/039ba1cb8fa62bab966f8a636ef817b4cef87723))
+
 ## [0.15.2](https://github.com/stoatchat/for-web/compare/stoat-for-web-v0.15.1...stoat-for-web-v0.15.2) (2026-08-18)
 
 
