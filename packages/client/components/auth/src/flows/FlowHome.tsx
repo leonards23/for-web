@@ -58,8 +58,8 @@ export default function FlowHome() {
               </b>
               <span style={{ "text-align": "center", opacity: "0.5" }}>
                 <Trans>
-                  Servidor privado do Leo 🦦 — Stoat self-hosted, forkado e
-                  rodando a build própria. (teste do pipeline)
+                  Stoat is one of the best ways to stay connected with your
+                  friends and community, anywhere, anytime.
                 </Trans>
               </span>
             </Column>
