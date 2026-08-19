@@ -230,11 +230,6 @@ const Config: SettingsConfiguration<{ server: Server }> = {
               icon: <MdSmartToy {...iconSize(20)} />,
               title: <Trans>My Bots</Trans>,
             },
-            {
-              id: "feedback",
-              icon: <MdRateReview {...iconSize(20)} />,
-              title: <Trans>Feedback</Trans>,
-            },
           ],
         },
         {
@@ -319,28 +314,9 @@ const Config: SettingsConfiguration<{ server: Server }> = {
         {
           entries: [
             {
-              onClick: async () => {
-                const changelog = await fetchLatestChangelog();
-                if (!changelog) return;
-                openModal({ type: "changelog", changelog });
-              },
-              icon: <MdCampaign {...iconSize(20)} />,
-              title: <Trans>What's New</Trans>,
-            },
-            {
-              href: "https://github.com/stoatchat",
-              icon: <MdMemory {...iconSize(20)} />,
-              title: <Trans>Source Code</Trans>,
-            },
-            {
               id: "advanced",
               icon: <MdScience {...iconSize(20)} />,
               title: <Trans>Advanced</Trans>,
-            },
-            {
-              href: "https://ko-fi.com/stoatchat",
-              icon: <MdCoffee {...iconSize(20)} />,
-              title: <Trans>Donate</Trans>,
             },
             {
               id: "logout",

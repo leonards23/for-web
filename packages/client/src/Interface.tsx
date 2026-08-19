@@ -24,6 +24,7 @@ import { LoadingScreen } from "@revolt/ui";
 
 import { SlideDrawer } from "../components/ui/components/navigation/SlideDrawer";
 import { Sidebar } from "./interface/Sidebar";
+import { FeedbackWidget } from "./FeedbackWidget";
 
 /**
  * Application layout
@@ -129,6 +130,7 @@ const Interface = (props: { children: JSX.Element }) => {
               >
                 {props.children}
               </Content>
+              <FeedbackWidget />
             </Layout>
           </Match>
         </Switch>
