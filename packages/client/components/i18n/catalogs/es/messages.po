@@ -2776,8 +2776,7 @@ msgstr "Enviar correo electrónico"
 
 #: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx
 msgid "Send embedded content such as link embeds or custom embeds"
-msgstr ""
-"Enviar contenido incrustado, como enlaces o integraciones personalizadas"
+msgstr "Enviar contenido incrustado, como enlaces o integraciones personalizadas"
 
 #: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx
 msgid "Send Embeds"
