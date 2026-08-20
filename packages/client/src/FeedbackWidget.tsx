@@ -37,15 +37,27 @@ export function FeedbackWidget() {
     setSending(true);
     setError("");
     try {
-      // Path is a custom native endpoint (not in the generated SDK types)
-      await (client().api as unknown as {
-        post: (path: string, body: unknown) => Promise<unknown>;
-      }).post("/feedback/submit", {
-        category: category(),
-        content: content().trim(),
-        page_url: window.location.href,
-        user_agent: navigator.userAgent,
+      // Custom native endpoint (not in the generated SDK types), so we call it
+      // with a direct fetch to control the JSON body + auth header ourselves.
+      const c = client() as unknown as {
+        authenticationHeader: [string, string];
+        options: { baseURL: string };
+      };
+      const [hkey, hval] = c.authenticationHeader;
+      const res = await fetch(c.options.baseURL + "/feedback/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          [hkey]: hval,
+        },
+        body: JSON.stringify({
+          category: category(),
+          content: content().trim(),
+          page_url: window.location.href,
+          user_agent: navigator.userAgent,
+        }),
       });
+      if (!res.ok) throw new Error("HTTP " + res.status);
       setSent(true);
       setContent("");
       setTimeout(() => {
