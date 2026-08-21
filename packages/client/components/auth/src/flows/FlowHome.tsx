@@ -9,7 +9,6 @@ import { Navigate } from "@revolt/routing";
 import { Button, Column } from "@revolt/ui";
 
 import { useState } from "@revolt/state";
-import Wordmark from "../../../../public/assets/web/wordmark.svg?component-solid";
 
 /**
  * Flow for logging into an account
@@ -27,11 +26,15 @@ export default function FlowHome() {
           </Show>
 
           <Column gap="xl">
-            <Wordmark
+            <img
+              src="/assets/web/wordmark.png"
+              alt="AgenXs Meet"
               class={css({
-                width: "60%",
+                width: "72%",
                 margin: "auto",
-                fill: "var(--md-sys-color-on-surface)",
+                objectFit: "contain",
+                filter: "invert(1)",
+                "@media (prefers-color-scheme: light)": { filter: "none" },
               })}
             />
 
