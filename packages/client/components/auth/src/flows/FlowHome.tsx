@@ -58,8 +58,8 @@ export default function FlowHome() {
               </b>
               <span style={{ "text-align": "center", opacity: "0.5" }}>
                 <Trans>
-                  Stoat is one of the best ways to stay connected with your
-                  friends and community, anywhere, anytime.
+                  O AgenXs Meet é a forma mais simples de se conectar com sua
+                  equipe e amigos por voz, vídeo e texto — em qualquer lugar.
                 </Trans>
               </span>
             </Column>

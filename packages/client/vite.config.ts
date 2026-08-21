@@ -46,9 +46,9 @@ export default defineConfig({
         type: "module",
       },
       manifest: {
-        name: "Stoat",
-        short_name: "Stoat",
-        description: "User-first open source chat platform.",
+        name: "AgenXs Meet",
+        short_name: "AgenXs Meet",
+        description: "Plataforma de chamadas e comunicação da AgenXs.",
         categories: ["communication", "chat", "messaging"],
         start_url: base,
         scope: pwaScope,
