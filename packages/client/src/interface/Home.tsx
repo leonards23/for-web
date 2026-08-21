@@ -26,7 +26,6 @@ import MdPayments from "@material-design-icons/svg/filled/payments.svg?component
 import MdRateReview from "@material-design-icons/svg/filled/rate_review.svg?component-solid";
 import MdSettings from "@material-design-icons/svg/filled/settings.svg?component-solid";
 
-import Wordmark from "../../public/assets/web/wordmark.svg?component-solid";
 
 import { HeaderIcon } from "./common/CommonHeader";
 
@@ -113,10 +112,14 @@ export function HomePage() {
       </Header>
       <div use:scrollable={{ class: content() }}>
         <Column>
-          <Wordmark
+          <img
+            src="/assets/web/wordmark.png"
+            alt="AgenXs Meet"
             class={css({
-              width: "160px",
-              fill: "var(--md-sys-color-on-surface)",
+              width: "220px",
+              objectFit: "contain",
+              filter: "invert(1)",
+              "@media (prefers-color-scheme: light)": { filter: "none" },
             })}
           />
         </Column>
@@ -139,53 +142,6 @@ export function HomePage() {
             >
               <Trans>Create a group or server</Trans>
             </CategoryButton>
-            <Switch fallback={null}>
-              <Match when={showLoungeButton && isInLounge}>
-                <CategoryButton
-                  onClick={() => navigate("/server/01F7ZSBSFHQ8TA81725KQCSDDP")}
-                  description={
-                    <Trans>
-                      You can report issues and discuss improvements with us
-                      directly here.
-                    </Trans>
-                  }
-                  icon={<MdGroups3 />}
-                >
-                  <Trans>Go to the Stoat Lounge</Trans>
-                </CategoryButton>
-              </Match>
-              <Match when={showLoungeButton && !isInLounge}>
-                <CategoryButton
-                  onClick={() => {
-                    client()
-                      .api.get("/invites/Testers")
-                      .then((invite) =>
-                        PublicChannelInvite.from(client(), invite),
-                      )
-                      .then((invite) => openModal({ type: "invite", invite }));
-                  }}
-                  description={
-                    <Trans>
-                      You can report issues and discuss improvements with us
-                      directly here.
-                    </Trans>
-                  }
-                  icon={<MdGroups3 />}
-                >
-                  <Trans>Join the Stoat Lounge</Trans>
-                </CategoryButton>
-              </Match>
-            </Switch>
-            <CategoryButton
-              variant="tertiary"
-              onClick={() => window.open("https://ko-fi.com/stoatchat")}
-              description={
-                <Trans>Support the project by donating - thank you!</Trans>
-              }
-              icon={<MdPayments />}
-            >
-              <Trans>Donate to Stoat</Trans>
-            </CategoryButton>
           </SeparatedColumn>
           <SeparatedColumn>
             <Show when={instance.isStoat}>
@@ -201,23 +157,6 @@ export function HomePage() {
                 <Trans>Discover Stoat</Trans>
               </CategoryButton>
             </Show>
-            <CategoryButton
-              onClick={() =>
-                openModal({
-                  type: "settings",
-                  config: "user",
-                  context: { page: "feedback" },
-                })
-              }
-              description={
-                <Trans>
-                  Let us know how we can improve our app by giving us feedback.
-                </Trans>
-              }
-              icon={<MdRateReview {...iconSize(22)} />}
-            >
-              <Trans>Give feedback on Stoat</Trans>
-            </CategoryButton>
             <CategoryButton
               onClick={() => openModal({ type: "settings", config: "user" })}
               description={
